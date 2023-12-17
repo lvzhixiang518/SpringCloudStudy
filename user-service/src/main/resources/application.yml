@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud_user?useSSL=false
+    username: root
+    password: lvzhixiang518
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: userservice # user的服务名称
+eureka:
+  client:
+    service-url: # eureka的地址信息
+      defaultZone: http://127.0.0.1:10086/eureka # 将自己也进行注册，如果多个地址，以逗号隔开
+
+mybatis:
+  type-aliases-package: cn.itcast.user.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
