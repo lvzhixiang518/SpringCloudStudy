@@ -8,10 +8,15 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   application:
     name: userservice # user的服务名称
-eureka:
-  client:
-    service-url: # eureka的地址信息
-      defaultZone: http://127.0.0.1:10086/eureka # 将自己也进行注册，如果多个地址，以逗号隔开
+  cloud:
+    nacos:
+      server-addr: localhost:8848 # nacos服务地址
+      discovery:
+        cluster-name: SH # 集群名称
+#eureka:
+#  client:
+#    service-url: # eureka的地址信息
+#      defaultZone: http://127.0.0.1:10086/eureka # 将自己也进行注册，如果多个地址，以逗号隔开
 
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
